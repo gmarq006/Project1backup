@@ -56,6 +56,14 @@ h1 {
     padding-top: 5%;
 }
 
+form  {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 35%;
+}
+
 /* Style inputs */
 input[type=text], select {
     width: 100%;
