@@ -1,4 +1,4 @@
-var zipcodeInput = document.getElementById('zipcode');
+var zipcodeInput = document.getElementById('age');
 var itemInput = document.getElementById('item');
 
 
@@ -13,3 +13,4 @@ form.addEventListener('submit', handleSubmit);
 
 
 // WE STILL NEED TO FIND AND ADD OUR API KEYS, AS WELL AS A FUNCTION TO MAKE SURE THAT THE ZIPCODE ISNT BLANK ALSO LINK TO LOCAL STORAGE
+
