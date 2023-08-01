@@ -28,30 +28,33 @@
 
     </div>
 
+    
     <div>
-        <h2>Enter into the scale</h2>
+        <h2>Enter your information into the scale</h2>
     </div>
 
-    <form action="/action_page.php">
-        <label for="height feet">Height (feet):</label>
-        <input type="text" id="fname" name="firstname" placeholder="your height in feet...">
+    <form id="myForm">
 
-        <label for="lname">Height (inches):</label>
-        <input type="text" id="lname" name="lastname" 
-        placeholder="your height in inches...">
 
-        <label for="lname">Weight:</label>
-        <input type="text" id="lname" name="lastname" 
-        placeholder="your weight in lbs...">
+        <label for="heightFeet">Height (feet):</label>
+        <input type="text" id="heightFeet" name="heightFeet" placeholder="your height in feet...">
+
+        <label for="heightInches">Height (inches):</label>
+        <input type="text" id="heightInches" name="heightInches" placeholder="your height in inches...">
+
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" placeholder="your weight in lbs...">
 
         <label for="gender">Gender:</label>
         <select id="gender" name="gender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
         </select>
 
         <input type="submit" value="Submit">
-      </form>
+    </form>
+
+    <script src="script.js"></script>
 
 </body>
 
