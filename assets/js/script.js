@@ -31,3 +31,21 @@ try {
 	console.error(error);
 }
 
+// second api as comments
+
+// const url = 'https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data?ingr=%3CREQUIRED%3E&nutrition-type=cooking';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Key': '02c1bf1c50msha479b0dca5111dbp133b1djsn8872783a0a2e',
+// 		'X-RapidAPI-Host': 'edamam-edamam-nutrition-analysis.p.rapidapi.com'
+// 	}
+// };
+
+// try {
+// 	const response = await fetch(url, options);
+// 	const result = await response.text();
+// 	console.log(result);
+// } catch (error) {
+// 	console.error(error);
+// }
