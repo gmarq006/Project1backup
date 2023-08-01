@@ -1,3 +1,5 @@
+var bmiResultsel = document.getElementById("bmiResults")
+
 document.getElementById("myForm").addEventListener("submit", async function (event) {
 	event.preventDefault(); // Prevent form submission
 
@@ -8,7 +10,9 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
 
 	// Display the collected data
 	alert("Height: " + height + " cm\nWeight: " + weight + " kg\nGender: " + gender);
-	var storeBmi = await bmiRequest(weight, height * 12)
+	var storeBmi = JSON.parse(await bmiRequest(weight, height * 12))
+	console.log(storeBmi)
+	bmiResultsel.innerHTML = `<p> ${storeBmi.bmi} </p>`
 	exerciseRequest()
 	localStorage.setItem("pastBmi", JSON.stringify(storeBmi))
 });
@@ -35,6 +39,8 @@ var bmiRequest = async function (weight, height) {
 	}
 
 }
+
+
 
 var exerciseRequest = async function () {
 	const url = 'https://exerciseapi3.p.rapidapi.com/exercise/name/push%20up';
