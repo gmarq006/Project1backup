@@ -3,16 +3,24 @@ var lNameInput = document.getElementById('lname');
 var genderInput = document.getElementById('gender');
 var submitInput = document.getElementById('');
 
-async function handleSubmit(event){
-	event.preventDefault();
-
-	var heightFeetInput = document.getElementById('fname').value;
-	var lNameInput = document.getElementById('lname').value;
-	var genderInput = document.getElementById('gender').value;
-
+function handleHeightInput(){
+	var heightFeet = heightFeetInput.value
+	console.log("height (feet): " + heightFeet);
 }
 
+function handleLastNameInput(){
+	var lastName = lNameInput.value
+	console.log("Last Name: " + lastName);
+}
 
+function handleGenderInput(){
+	var gender = genderInput.value
+	console.log("Gender: " + gender);
+}
+
+heightFeetInput.addEventListener('input', handleHeightInput);
+        lNameInput.addEventListener('input', handleLastNameInput);
+        genderInput.addEventListener('input', handleGenderInput);
 
 var url = 'https://exerciseapi3.p.rapidapi.com/exercise/name/push%20up';
 var option1 = {
