@@ -27,6 +27,11 @@ header h1 {
     color: white;
 }
 
+h2 {
+    text-align: center;
+    padding: 2%;
+}
+
 header nav {
     width: 50%;
     border: 1px black;
@@ -53,7 +58,7 @@ h1 {
 
 .logo {
     align-items: center;
-    padding-left: 40%;
+    padding-left: 37%;
     padding-top: 5%;
 }
 
@@ -62,7 +67,7 @@ form {
     justify-content: center;
     flex-direction: column;
     margin: auto;
-    margin-bottom: 30%;
+    margin-bottom: 35%;
 }
 
 /* Style inputs */
