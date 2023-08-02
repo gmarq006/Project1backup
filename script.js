@@ -41,6 +41,13 @@ var bmiRequest = async function (weight, height) {
 }
 
 
+alert(workoutPlan);
+var storePlanner = JSON.parse(await exerciseRequest(workout))
+console.log(storePlanner)
+bmiResultsel.innerHTML = `<p> ${storePlanner.planner} </p>`
+exerciseRequest()
+localStorage.setItem("pastBmi", JSON.stringify(storePlanner))
+
 
 var exerciseRequest = async function () {
 
@@ -66,7 +73,15 @@ var exerciseRequest = async function () {
 
 exerciseRequest()
 
+let bmiResults;
 
+if (bmi < 17) {
+	workoutPlan = 'bicepts';
+} else if (bmi >= 17.1 && bmi <= 25) {
+	workoutPlan = 'tricepts'
+}
+else {
+	workoutPlan = 'other'
+}
 
-
-
+console.log(workoutPlan)
