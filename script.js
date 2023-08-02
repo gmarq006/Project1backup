@@ -1,5 +1,6 @@
 var bmiResultsel = document.getElementById("bmiResults")
 
+
 document.getElementById("myForm").addEventListener("submit", async function (event) {
 	event.preventDefault(); // Prevent form submission
 
