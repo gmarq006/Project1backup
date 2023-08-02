@@ -98,3 +98,5 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
+
+/* must add the BMI calculation to the center of the page below the calculator */
