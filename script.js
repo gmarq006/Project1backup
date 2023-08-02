@@ -40,7 +40,7 @@ document
     bmiResultsel.innerHTML = `<p> ${storeBmi.bmi} </p>`;
     exerciseRequest();
     localStorage.setItem("pastBmi", JSON.stringify(storeBmi));
-  });
+  };
 async function displayGoal() {
   var storemyGoalInput = await goalRequest();
   console.log(storemyGoalInput);
@@ -98,4 +98,4 @@ displayGoal();
 // } else {
 //  the act
 // append the buttons and actions with js... we are not supposed to have alerts.
-// if statements and one last function for the exercise planner or include it in that specific function.
+  
