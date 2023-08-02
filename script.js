@@ -43,12 +43,14 @@ var bmiRequest = async function (weight, height) {
 
 
 var exerciseRequest = async function () {
-	const url = 'https://exerciseapi3.p.rapidapi.com/exercise/name/push%20up';
+
+
+	const url = 'https://workout-planner1.p.rapidapi.com/customized?time=30&equipment=dumbbells&muscle=biceps&fitness_level=beginner&fitness_goals=strength';
 	const options = {
 		method: 'GET',
 		headers: {
 			'X-RapidAPI-Key': '3c8416fb24msh5c310a41db76d13p16c570jsnc83bfc85258f',
-			'X-RapidAPI-Host': 'exerciseapi3.p.rapidapi.com'
+			'X-RapidAPI-Host': 'workout-planner1.p.rapidapi.com'
 		}
 	};
 
@@ -56,11 +58,15 @@ var exerciseRequest = async function () {
 		const response = await fetch(url, options);
 		const result = await response.text();
 		console.log(result);
-		return result
 	} catch (error) {
 		console.error(error);
 	}
+
 }
 
 exerciseRequest()
+
+
+
+
 
