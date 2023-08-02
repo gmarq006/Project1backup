@@ -1,4 +1,6 @@
 var bmiResultsel = document.getElementById("bmiResults")
+var myGoalInputel = document.getElementById("myGoalinput")
+
 
 document.getElementById("myForm").addEventListener("submit", async function (event) {
 	event.preventDefault(); // Prevent form submission
@@ -16,6 +18,12 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
 	exerciseRequest()
 	localStorage.setItem("pastBmi", JSON.stringify(storeBmi))
 });
+async function displayGoal (){
+var storemyGoalInput = await goalRequest()
+	console.log(storemyGoalInput)
+	myGoalInputel.innerHTML += `<p> ${storemyGoalInput.goalRequest} </p>`
+	localStorage.setItem("goal", JSON.stringify(storemyGoalInput))
+}
 
 
 
@@ -42,7 +50,7 @@ var bmiRequest = async function (weight, height) {
 
 
 
-var exerciseRequest = async function () {
+var goalRequest = async function () {
 
 
 	const url = 'https://workout-planner1.p.rapidapi.com/customized?time=30&equipment=dumbbells&muscle=biceps&fitness_level=beginner&fitness_goals=strength';
@@ -56,15 +64,16 @@ var exerciseRequest = async function () {
 
 	try {
 		const response = await fetch(url, options);
-		const result = await response.text();
+		const result = await response.json();
 		console.log(result);
+		return result;
 	} catch (error) {
 		console.error(error);
 	}
 
 }
 
-exerciseRequest()
+displayGoal()
 
 
 
