@@ -1,7 +1,7 @@
 # 🏋️‍♀️ excersise wise: BMI Calculator & Recipe Advisor  🏋️‍♀️
 
 ## Paragraph 1: What was the assignment or task?
-The task for this group project was to create a BMI calculator with an API for BMI information and excersise  planners. The BMI calculator should take the user's inputs for height and weight and provide them with their Body Mass Index (BMI). Additionally, the calculator should make API requests to retrieve information about the BMI category and excersise  planners based on the calculated BMI.
+The task for this group project was to create a BMI calculator with an API for BMI information and health recipes. The BMI calculator should take the user's inputs for height and weight and provide them with their Body Mass Index (BMI). Additionally, the calculator should make API requests to retrieve information about the BMI category and health recipes based on the calculated BMI.
 ## Paragraph 2: What was our motivation?
 Our motivation behind building this project was to develop a user-friendly BMI calculator that goes beyond providing just the BMI value. We wanted to enhance the user experience by offering relevant excersise  information, such as the BMI category (underweight, average weight, overweight, or obese), and providing excersise  planners tailored to the user's BMI to promote a excersise ier lifestyle. By combining these features into a single tool, we aimed to make it easier for users to understand their excersise  status and access suitable planners to improve their well-being.
 ## Paragraph 3: What problem does it solve?
