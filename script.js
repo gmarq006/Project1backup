@@ -9,10 +9,10 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
 	const gender = document.getElementById("gender").value;
 
 	// Display the collected data
-	alert("Height: " + height + " cm\nWeight: " + weight + " kg\nGender: " + gender);
+	alert("Height: " + height + " in\nWeight: " + weight + " lbs\nGender: " + gender);
 	var storeBmi = JSON.parse(await bmiRequest(weight, height * 12))
 	console.log(storeBmi)
-	bmiResultsel.innerHTML = `<p> ${storeBmi.bmi} </p>`
+	bmiResultsel.innerHTML = `<p class= "is-size-1 has-text-link has-text-centered"> ${storeBmi.bmi} </p>`
 	exerciseRequest()
 	localStorage.setItem("pastBmi", JSON.stringify(storeBmi))
 });
