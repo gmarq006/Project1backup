@@ -1,4 +1,5 @@
 var bmiResultsel = document.getElementById("bmiResults")
+var myGoalInputel = document.getElementById("myGoalinput")
 
 
 document.getElementById("myForm").addEventListener("submit", async function (event) {
@@ -17,6 +18,13 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
 	exerciseRequest()
 	localStorage.setItem("pastBmi", JSON.stringify(storeBmi))
 });
+
+var storemyGoalInput = JSON.parse(await goalRequest())
+	console.log(storemyGoalInput)
+	myGoalInputel.innerHTML = `<p> ${storemyGoalInput.goalRequest} </p>`
+	exerciseRequest()
+	localStorage.setItem("goal", JSON.stringify(storemyGoalInput))
+
 
 
 
