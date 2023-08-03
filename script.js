@@ -1,4 +1,6 @@
 var bmiResultsel = document.getElementById("bmiResults")
+var myGoalInputel = document.getElementById("myGoalinput")
+var workoutBtn = document.querySelector(".workoutBtn")
 
 document.getElementById("myForm").addEventListener("submit", async function (event) {
 	event.preventDefault(); // Prevent form submission
@@ -9,13 +11,19 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
 	const gender = document.getElementById("gender").value;
 
 	// Display the collected data
-	alert("Height: " + height + " cm\nWeight: " + weight + " kg\nGender: " + gender);
+	alert("Height: " + height + " in\nWeight: " + weight + " lbs\nGender: " + gender);
 	var storeBmi = JSON.parse(await bmiRequest(weight, height * 12))
 	console.log(storeBmi)
-	bmiResultsel.innerHTML = `<p> ${storeBmi.bmi} </p>`
-	exerciseRequest()
+	bmiResultsel.innerHTML = `<p class= "is-size-1 has-text-link has-text-centered"> ${storeBmi.bmi} </p>`
 	localStorage.setItem("pastBmi", JSON.stringify(storeBmi))
 });
+
+async function displayGoal() {
+	var storemyGoalInput = await goalRequest()
+	console.log(storemyGoalInput)
+	myGoalInputel.innerHTML += `<p> ${storemyGoalInput.goalRequest} </p>`
+	localStorage.setItem("goal", JSON.stringify(storemyGoalInput))
+}
 
 
 
@@ -49,28 +57,30 @@ exerciseRequest()
 localStorage.setItem("pastBmi", JSON.stringify(storePlanner))
 
 
-var exerciseRequest = async function () {
+var goalRequest = async function () {
 
 
 	const url = 'https://workout-planner1.p.rapidapi.com/customized?time=30&equipment=dumbbells&muscle=biceps&fitness_level=beginner&fitness_goals=strength';
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '3c8416fb24msh5c310a41db76d13p16c570jsnc83bfc85258f',
+			'X-RapidAPI-Key': '3f442a8316msh28648617041e0ddp101c3cjsn61e5fb01abfe',
 			'X-RapidAPI-Host': 'workout-planner1.p.rapidapi.com'
 		}
 	};
 
 	try {
 		const response = await fetch(url, options);
-		const result = await response.text();
+		const result = await response.json();
 		console.log(result);
+		return result;
 	} catch (error) {
 		console.error(error);
 	}
 
 }
 
+<<<<<<< HEAD
 exerciseRequest()
 
 let bmiResults;
@@ -85,3 +95,7 @@ else {
 }
 
 console.log(workoutPlan)
+=======
+workoutBtn.onclick = displayGoal; 
+``
+>>>>>>> 8392bc26356548a36856132875bfacc08b478d47
