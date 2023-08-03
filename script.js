@@ -64,7 +64,7 @@ var goalRequest = async function () {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '3f442a8316msh28648617041e0ddp101c3cjsn61e5fb01abfe',
+			'X-RapidAPI-Key': '5b717f999dmshcf3f7738a0d374ep188399jsn58bf32e76f17',
 			'X-RapidAPI-Host': 'workout-planner1.p.rapidapi.com'
 		}
 	};
@@ -96,6 +96,6 @@ else {
 
 console.log(workoutPlan)
 =======
-workoutBtn.onclick = displayGoal; 
+workoutBtn.onclick = displayGoal;
 ``
 >>>>>>> 8392bc26356548a36856132875bfacc08b478d47
