@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <title>Whats your BMI?</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Whats your BMI?</h1>
-        <nav>
-            <ul>
-                <li><a href="#calculator">Calculator</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#my-account">My Account</a></li>
-
-            </ul>
-        </nav>
+      <h1>Whats your BMI?</h1>
+      <nav>
+        <ul>
+          <li><a href="#calculator">Home Page</a> &raquo;</li>
+          <li>
+            <a href="assets/images/HealthWise deck presentation.pdf">  About US</a> &raquo;</li>
+          <li><a href="#my-account">My Account</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="logo">
-        <img src="./assets/images/Layer_1.svg" alt="BMI logo">
-
+      <img src="./assets/images/Layer_1.svg" alt="BMI logo" />
     </div>
 
-
     <div>
-        <h2>Enter your information into the scale</h2>
+      <h2>Enter your information into the scale</h2>
     </div>
 
     <form id="myForm">
+      <label for="heightFeet">Height (feet):</label>
+      <input
+        type="text"
+        id="heightFeet"
+        name="heightFeet"
+        placeholder="your height in feet..."
+      />
 
+      <label for="heightInches">Height (inches):</label>
+      <input
+        type="text"
+        id="heightInches"
+        name="heightInches"
+        placeholder="your height in inches..."
+      />
 
-        <label for="heightFeet">Height (feet):</label>
-        <input type="text" id="heightFeet" name="heightFeet" placeholder="your height in feet...">
+      <label for="weight">Weight:</label>
+      <input
+        type="text"
+        id="weight"
+        name="weight"
+        placeholder="your weight in lbs..."
+      />
 
-        <label for="heightInches">Height (inches):</label>
-        <input type="text" id="heightInches" name="heightInches" placeholder="your height in inches...">
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
 
-        <label for="weight">Weight:</label>
-        <input type="text" id="weight" name="weight" placeholder="your weight in lbs...">
-
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-
-        <input type="submit" value="Submit">
-
-
+      <input type="submit" value="Submit" />
     </form>
 
     <div id="bmiResults"></div>
 
     <form id="myGoalinput">
-        <label for="goal">Tell us your goal</label>
-        <input type="text" id="bmiNumber" name="workoutplan"><br><br>
-        <input type="submit" value="Get my Workout">    
+      <label for="goal">Tell us your goal</label>
+      <input type="text" id="bmiNumber" name="workoutplan" /><br /><br />
+      <input type="submit" value="Get my Workout" />
     </form>
 
     <script src="script.js"></script>
-
-</body>
-
+  </body>
 </html>
 
 <!-- Need to create a drop down form below them bmi so user can select the plan they wish: Lose Fat, Build Muscle, Maintain Current Weight that
