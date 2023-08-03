@@ -1,6 +1,6 @@
 var bmiResultsel = document.getElementById("bmiResults")
 var myGoalInputel = document.getElementById("myGoalinput")
-
+var workoutBtn = document.querySelector(".workoutBtn")
 
 document.getElementById("myForm").addEventListener("submit", async function (event) {
 	event.preventDefault(); // Prevent form submission
@@ -15,11 +15,11 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
 	var storeBmi = JSON.parse(await bmiRequest(weight, height * 12))
 	console.log(storeBmi)
 	bmiResultsel.innerHTML = `<p class= "is-size-1 has-text-link has-text-centered"> ${storeBmi.bmi} </p>`
-	exerciseRequest()
 	localStorage.setItem("pastBmi", JSON.stringify(storeBmi))
 });
-async function displayGoal (){
-var storemyGoalInput = await goalRequest()
+
+async function displayGoal() {
+	var storemyGoalInput = await goalRequest()
 	console.log(storemyGoalInput)
 	myGoalInputel.innerHTML += `<p> ${storemyGoalInput.goalRequest} </p>`
 	localStorage.setItem("goal", JSON.stringify(storemyGoalInput))
@@ -57,7 +57,7 @@ var goalRequest = async function () {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '3c8416fb24msh5c310a41db76d13p16c570jsnc83bfc85258f',
+			'X-RapidAPI-Key': '3f442a8316msh28648617041e0ddp101c3cjsn61e5fb01abfe',
 			'X-RapidAPI-Host': 'workout-planner1.p.rapidapi.com'
 		}
 	};
@@ -73,9 +73,5 @@ var goalRequest = async function () {
 
 }
 
-displayGoal()
-
-
-
-
-
+workoutBtn.onclick = displayGoal; 
+``
