@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <title>Whats your BMI?</title>
 </head>
 
 <body>
     <header>
-        <h1>Whats your BMI?</h1>
-        <nav>
-            <ul>
-                <li><a href="#calculator">Calculator</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#my-account">My Account</a></li>
-
-            </ul>
-        </nav>
+        <div class="header">
+            <a href="#default" class="title">What's your BMI?</a>
+            <div class="header-right">
+                <a class="active" href="#home">Home</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#about">My Account</a>
+            </div>
+        </div>
     </header>
 
     <div class="logo">
@@ -28,23 +28,50 @@
 
     </div>
 
+
     <div>
-        <h2>Enter into the scale</h2>
+        <h2 class="is-size-3">Enter your information into the scale</h2>
     </div>
 
-    <div class="form-container">
-        <form>
-            <div>
-                <label for="zipcode">Zip Code:</label>
-                <input type="text" id="zipcode" name="zipcode">
-            </div>
-            <div>
-                <label for="item">Find Item:</label>
-                <input type="text" id="item" name="item">
-            </div>
-            <input type="submit" value="Search">
-        </form>
-    </div>
+    <form id="myForm">
+
+
+        <label for="heightFeet">Height (feet):</label>
+        <input type="text" id="heightFeet" name="heightFeet" placeholder="your height in feet...">
+
+        <label for="heightInches">Height (inches):</label>
+        <input type="text" id="heightInches" name="heightInches" placeholder="your height in inches...">
+
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" placeholder="your weight in lbs...">
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <input type="submit" value="Submit">
+
+
+    </form>
+
+    <div id="bmiResults"></div>
+
+
+    <form id="myBMIinput">
+        <label for="BMI">Enter your plan</label>
+        <input type="text" id="bmiNumber" name="bmiNumber">
+
+        <!-- <input type="submit" value="Get my Workout" class="workoutBtn"> -->
+
+        <button type="button" class="btn workoutBtn"> Get my workout</button>
+
+
+    </form>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
