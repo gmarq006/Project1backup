@@ -1,4 +1,4 @@
-# 🏋️‍♀️ exercisewise: BMI Calculator & Recipe Advisor  🏋️‍♀️
+# 🏋️‍♀️ HealthWise: BMI Calculator & Exercise Advisor  🏋️‍♀️
 
 ## Paragraph 1: What was the assignment or task?
 The task for this group project was to create a BMI calculator with an API for BMI information and health recipes. The BMI calculator should take the user's inputs for height and weight and provide them with their Body Mass Index (BMI). Additionally, the calculator should make API requests to retrieve information about the BMI category and health recipes based on the calculated BMI.
