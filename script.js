@@ -1,6 +1,10 @@
 var bmiResultsel = document.getElementById("bmiResults")
 var myGoalInputel = document.getElementById("myGoalinput")
 var workoutBtn = document.querySelector(".workoutBtn")
+var myBMIinputEl = document.getElementById("myBMIinput")
+workoutBtn.addEventListener("click", async function (event) {
+	displayGoal()
+})
 
 document.getElementById("myForm").addEventListener("submit", async function (event) {
 	event.preventDefault(); // Prevent form submission
@@ -12,16 +16,33 @@ document.getElementById("myForm").addEventListener("submit", async function (eve
 
 	// Display the collected data
 	alert("Height: " + height + " in\nWeight: " + weight + " lbs\nGender: " + gender);
-	var storeBmi = JSON.parse(await bmiRequest(weight, height * 12))
+	var storeBmi = await bmiRequest(weight, height * 12)
 	console.log(storeBmi)
-	bmiResultsel.innerHTML = `<p class= "is-size-1 has-text-link has-text-centered"> ${storeBmi.bmi} </p>`
+
+	var bmi = storeBmi.bmi
+
+	if (bmi < 17) {
+		workoutPlan = 'bicepts';
+	} else if (bmi >= 17.1 && bmi <= 25) {
+		workoutPlan = 'tricepts'
+	}
+	else {
+		workoutPlan = 'other'
+	}
+
+	bmiResultsel.innerHTML = `<p class= "is-size-1 has-text-link has-text-centered"> ${storeBmi.bmi} ${workoutPlan}</p>`
 	localStorage.setItem("pastBmi", JSON.stringify(storeBmi))
 });
 
 async function displayGoal() {
 	var storemyGoalInput = await goalRequest()
 	console.log(storemyGoalInput)
-	myGoalInputel.innerHTML += `<p> ${storemyGoalInput.goalRequest} </p>`
+
+	myGoalInputel.innerHTML += `<p class= "is-size-1 has-text-link has-text-centered"> ${storemyGoalInput.goalRequest} </p>`
+
+
+
+
 	localStorage.setItem("goal", JSON.stringify(storemyGoalInput))
 }
 
@@ -32,14 +53,14 @@ var bmiRequest = async function (weight, height) {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '3c8416fb24msh5c310a41db76d13p16c570jsnc83bfc85258f',
+			'X-RapidAPI-Key': '7c1de5a4afmsh77fd29a73019c30p17d739jsn8ec1baf1a4bf',
 			'X-RapidAPI-Host': 'body-mass-index-bmi-calculator.p.rapidapi.com'
 		}
 	};
 
 	try {
 		const response = await fetch(url, options);
-		const result = await response.text();
+		const result = await response.json();
 		console.log(result);
 		return result
 	} catch (error) {
@@ -49,18 +70,21 @@ var bmiRequest = async function (weight, height) {
 }
 
 
-alert(workoutPlan);
-var storePlanner = JSON.parse(await exerciseRequest(workout))
-console.log(storePlanner)
-bmiResultsel.innerHTML = `<p> ${storePlanner.planner} </p>`
-exerciseRequest()
-localStorage.setItem("pastBmi", JSON.stringify(storePlanner))
+async function displayBMI(workout) {
+	var storePlanner = JSON.parse(await bmiRequest(workout))
+	console.log(storePlanner)
+	bmiResultsel.innerHTML = `<p> ${storePlanner.planner} </p>`
+	bmiRequest()
+	localStorage.setItem("pastBmi", JSON.stringify(storePlanner))
+}
+
 
 
 var goalRequest = async function () {
 
+	var bmiNumber = document.getElementById("bmiNumber")
 
-	const url = 'https://workout-planner1.p.rapidapi.com/customized?time=30&equipment=dumbbells&muscle=biceps&fitness_level=beginner&fitness_goals=strength';
+	const url = 'https://workout-planner1.p.rapidapi.com/customized?time=30&equipment=dumbbells&muscle=' + bmiNumber.value + '&fitness_level=beginner&fitness_goals=strength';
 	const options = {
 		method: 'GET',
 		headers: {
@@ -68,6 +92,8 @@ var goalRequest = async function () {
 			'X-RapidAPI-Host': 'workout-planner1.p.rapidapi.com'
 		}
 	};
+
+
 
 	try {
 		const response = await fetch(url, options);
@@ -80,22 +106,10 @@ var goalRequest = async function () {
 
 }
 
-<<<<<<< HEAD
-exerciseRequest()
+
 
 let bmiResults;
 
-if (bmi < 17) {
-	workoutPlan = 'bicepts';
-} else if (bmi >= 17.1 && bmi <= 25) {
-	workoutPlan = 'tricepts'
-}
-else {
-	workoutPlan = 'other'
-}
 
-console.log(workoutPlan)
-=======
-workoutBtn.onclick = displayGoal;
-``
->>>>>>> 8392bc26356548a36856132875bfacc08b478d47
+
+bmiRequest()
